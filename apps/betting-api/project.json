@@ -21,6 +21,34 @@
           "buildTarget": "betting-api:build:production"
         }
       }
+    },
+    "seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node -r tsconfig-paths/register src/seed.ts",
+        "cwd": "apps/betting-api"
+      }
+    },
+    "typeorm": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "typeorm-extension -d typeorm.js",
+        "cwd": "apps/betting-api"
+      }
+    },
+    "migration:generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx typeorm-ts-node-commonjs -d ./typeorm.config.ts migration:generate src/migrations/{args.name}",
+        "cwd": "apps/betting-api"
+      }
+    },
+    "migration:run": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx typeorm-ts-node-commonjs migration:run -d ./typeorm.config.ts",
+        "cwd": "apps/betting-api"
+      }
     }
   }
 }
