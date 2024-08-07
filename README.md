@@ -2,9 +2,11 @@
 
 This project is a simple online betting dashboard that displays a list of sporting events, their corresponding odds, and allows users to place bets. It's built using Next.js frontend and Nest.js backend, organized in a NX monorepo.
 
+![Screenshot of the application](./docs/assets/screenshots.png)
+
 ## Future Improvements
 Improvements that can be made to the project with more time:
-- User authentication
+- User authentication (check `TODOs` in the code)
 - Add tests for the frontend and backend
 - Setup pagination while fetching sports, events and bet history
 - Better error handling and input validation
@@ -66,7 +68,8 @@ nx run betting-client:dev
 - Backend API endpoint to fetch sports events: `/api/events`
 - Frontend dashboard displaying list of sports events
 - Option to place bets on events
-- Minimal styling with CSS or a CSS framework
+- Minimalistic design that uses Tailwind CSS
+- Option to view bet history
 
 ## Technologies Used
 
