@@ -11,6 +11,7 @@ Improvements that can be made to the project with more time:
 - Setup pagination while fetching sports, events and bet history
 - Better error handling and input validation
 - Better UI/UX
+- Caching
 
 ## Prerequisites
 
