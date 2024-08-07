@@ -19,28 +19,33 @@ const EventsList = ({ events }: EventsListProps) => {
   return (
     <>
       <div className="flex flex-col space-y-4">
-        {events.map((event) => (
+        {events.map(({ id, name, startTime, outcomes }) => (
           <div
-            className={`grid grid-cols-${event.outcomes.length} gap-4 rounded border p-2`}
-            key={event.id}
+            className={`grid grid-cols-${outcomes.length} gap-4 rounded border p-2`}
+            key={id}
           >
             <div
-              className={`text-primary col-span-${event.outcomes.length} bg-gray-100 p-2 font-bold`}
+              className={`flex items-center justify-between text-primary col-span-${outcomes.length} bg-gray-100 p-2 font-bold`}
             >
-              {event.name}
+              <p>
+                {name}
+              </p>
+              <p className="text-gray-500 text-sm">
+                {new Date(startTime).toLocaleString()}
+              </p>
             </div>
-            {event.outcomes.map(({ id, name }) => (
+            {outcomes.map(({ id, name }) => (
               <div className="rounded bg-gray-100 p-2 text-center" key={id}>
                 {name}
               </div>
             ))}
-            {event.outcomes.map((outcome) => (
+            {outcomes.map((outcome) => (
               <button
                 className="rounded bg-blue-100 p-2 text-center hover:bg-blue-200"
                 key={outcome.id}
                 onClick={() =>
                   setBetData({
-                    eventName: event.name,
+                    eventName: name,
                     outcome,
                   })
                 }

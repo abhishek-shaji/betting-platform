@@ -9,7 +9,7 @@ interface SportsBettingPageProps {
 
 async function SportBettingPage({ params }: SportsBettingPageProps) {
   try {
-    const { data } = await client.GET('/api/sports');
+    const { data: sports } = await client.GET('/api/sports');
 
     const { data: events } = await client.GET('/api/events', {
       params: {
@@ -21,7 +21,7 @@ async function SportBettingPage({ params }: SportsBettingPageProps) {
 
     return (
       <div className="mx-auto min-h-screen max-w-4xl py-10">
-        {data && events && <BettingPanel sports={data} events={events} />}
+        {sports && events && <BettingPanel sports={sports} events={events} />}
       </div>
     );
   } catch (error) {
