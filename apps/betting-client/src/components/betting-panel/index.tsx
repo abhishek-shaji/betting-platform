@@ -18,12 +18,17 @@ const BettingPanel = ({ sports, events }: BettingPanelProps) => {
 
   return (
     <div className="bg-white p-4">
-      <h2 className="text-primary mb-4 text-4xl font-extrabold">
-        Sports Betting
-      </h2>
+      <div className="flex justify-between items-center">
+        <h2 className="text-primary mb-4 text-4xl font-bold">
+          Sports Betting
+        </h2>
+        <Link href="/my-bets" className="text-primary hover:text-primary font-semibold">
+          Bet History →
+        </Link>
+      </div>
       <hr className="mb-8" />
       <div className="border-primary my-4 border-b pb-1">
-        {sports.map(({ id, name }) => {
+      {sports.map(({ id, name }) => {
           const isSelected = Number(sportId) === id;
 
           return (

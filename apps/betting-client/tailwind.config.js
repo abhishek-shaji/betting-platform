@@ -23,7 +23,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0B1957',
+        primary: '#000c1d',
         secondary: '#3E8EDD',
         accent: '#EDECE1',
       },

@@ -15,15 +15,16 @@ async function MyBetsPage() {
     }
 
     return (
-      <div className="min-h-screen bg-gray-100 py-10">
+      <div className="min-h-screen bg-white py-10">
         <div className="mx-auto max-w-4xl">
-          <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Bets History</h1>
-          <div className="space-]y-6">
+          <h1 className="text-4xl font-bold mb-8 text-gray-800">Bets History</h1>
+          <hr className="mb-8" />
+          <div className="space-y-6">
             {data.map(({ id, event, outcome, amount }) => (
-              <div key={id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
+              <div key={id} className="bg-white rounded-lg p-6 transition duration-300 border border-gray-200">
                 <h2 className="text-2xl font-extrabold text-primary mb-2">{event?.name}</h2>
                 <div className="flex justify-between items-center">
-                  <p className="text-lg text-gray-700">{outcome.name}</p>
+                  <p className="text-lg text-gray-700">Outcome: <strong>{outcome.name}</strong></p>
                   <p className="text-lg font-semibold text-green-600">Odds: {outcome.odds}</p>
                 </div>
                 <p className="text-md text-gray-600 mt-2">Amount: ${amount}</p>
