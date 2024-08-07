@@ -10,7 +10,6 @@ Improvements that can be made to the project with more time:
 - Better error handling and input validation
 - Better UI/UX
 
-
 ## Prerequisites
 
 - Node.js (version 14 or later recommended)
@@ -44,6 +43,10 @@ npm ci
      BACKEND_API_BASE_URL=http://localhost:4200
      NEXT_PUBLIC_HOST=http://localhost:3000
       ```
+### Seed the database:
+```bash
+nx run betting-api:seed
+```
 
 ### Running the Application
 #### Start the backend API:

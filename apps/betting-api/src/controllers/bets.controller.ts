@@ -7,9 +7,9 @@ import { RequestErrorDto } from '../dto/request-error.dto';
 import { Bet } from '../entities/bet.entity';
 import { BetService } from '../services/bet.service';
 
-@Controller('bet')
-@ApiTags('bet')
-export class BetController {
+@Controller('bets')
+@ApiTags('bets')
+export class BetsController {
   constructor(private readonly betService: BetService) {}
 
   @Get('')

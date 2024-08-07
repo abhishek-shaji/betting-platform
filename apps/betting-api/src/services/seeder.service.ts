@@ -24,8 +24,8 @@ class SeederService {
 
   async deleteExistingData() {
     Logger.log('Deleting existing data...');
-    await this.userRepository.delete({});
     await this.betRepository.delete({});
+    await this.userRepository.delete({});
     await this.outcomeRepository.delete({});
     await this.eventRepository.delete({});
     await this.sportRepository.delete({});

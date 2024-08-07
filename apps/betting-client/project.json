@@ -9,7 +9,7 @@
     "openapi-typescript": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npx openapi-typescript http://localhost:3000/swagger.json --output src/types/schema.ts",
+        "command": "npx openapi-typescript http://localhost:4200/swagger.json --output src/types/schema.ts",
         "cwd": "apps/betting-client"
       }
     }

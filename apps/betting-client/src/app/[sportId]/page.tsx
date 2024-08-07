@@ -1,22 +1,36 @@
 import { client } from '../../fetcher';
 import { BettingPanel } from '../../components/betting-panel';
 
-export default async function Index({ params }) {
-  const { data } = await client.GET('/api/sport');
-
-  console.log(params.sportId, 'params.sportId');
-
-  const { data: events } = await client.GET('/api/event', {
-    params: {
-      query: {
-        sportId: params.sportId,
-      },
-    },
-  });
-
-  return (
-    <div className="mx-auto min-h-screen max-w-4xl py-10">
-      {data && events && <BettingPanel sports={data} events={events} />}
-    </div>
-  );
+interface SportsBettingPageProps {
+  params: {
+    sportId: string;
+  };
 }
+
+async function SportBettingPage({ params }: SportsBettingPageProps) {
+  try {
+    const { data } = await client.GET('/api/sports');
+
+    const { data: events } = await client.GET('/api/events', {
+      params: {
+        query: {
+          sportId: Number(params.sportId),
+        },
+      },
+    });
+
+    return (
+      <div className="mx-auto min-h-screen max-w-4xl py-10">
+        {data && events && <BettingPanel sports={data} events={events} />}
+      </div>
+    );
+  } catch (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h1 className="text-3xl font-extrabold">An error occured while fetching data. Please try again later</h1>
+      </div>
+    );
+  }
+}
+
+export default SportBettingPage;

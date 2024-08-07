@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-    "/api/event": {
+    "/api/events": {
         parameters: {
             query?: never;
             header?: never;
@@ -12,7 +12,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get all events */
-        get: operations["EventController_getEvents"];
+        get: operations["EventsController_getEvents"];
         put?: never;
         post?: never;
         delete?: never;
@@ -21,7 +21,7 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/bet": {
+    "/api/bets": {
         parameters: {
             query?: never;
             header?: never;
@@ -29,7 +29,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get all bets for user */
-        get: operations["BetController_getBets"];
+        get: operations["BetsController_getBets"];
         put?: never;
         post?: never;
         delete?: never;
@@ -38,7 +38,7 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/bet/{outcomeId}": {
+    "/api/bets/{outcomeId}": {
         parameters: {
             query?: never;
             header?: never;
@@ -48,14 +48,14 @@ export interface paths {
         get?: never;
         put?: never;
         /** Place a bet */
-        post: operations["BetController_create"];
+        post: operations["BetsController_create"];
         delete?: never;
         options?: never;
         head?: never;
         patch?: never;
         trace?: never;
     };
-    "/api/sport": {
+    "/api/sports": {
         parameters: {
             query?: never;
             header?: never;
@@ -107,7 +107,7 @@ export interface components {
             /**
              * Format: date-time
              * @description The start time of the event
-             * @example 2024-08-07T12:55:08.169Z
+             * @example 2024-08-07T14:51:58.256Z
              */
             startTime: string;
             outcomes: components["schemas"]["Outcome"][];
@@ -131,7 +131,7 @@ export interface components {
             /**
              * Format: date-time
              * @description The time the bet was placed
-             * @example 2024-08-07T12:55:08.169Z
+             * @example 2024-08-07T14:51:58.256Z
              */
             placedAt: string;
             /** @description The event the bet is placed on */
@@ -184,7 +184,7 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    EventController_getEvents: {
+    EventsController_getEvents: {
         parameters: {
             query?: {
                 sportId?: number;
@@ -206,7 +206,7 @@ export interface operations {
             };
         };
     };
-    BetController_getBets: {
+    BetsController_getBets: {
         parameters: {
             query?: never;
             header?: never;
@@ -235,7 +235,7 @@ export interface operations {
             };
         };
     };
-    BetController_create: {
+    BetsController_create: {
         parameters: {
             query?: never;
             header?: never;

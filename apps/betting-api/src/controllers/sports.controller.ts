@@ -4,8 +4,8 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Sport } from '../entities/sport.entity';
 import { SportService } from '../services/sport.service';
 
-@Controller('sport')
-@ApiTags('sport')
+@Controller('sports')
+@ApiTags('sports')
 export class SportsController {
   constructor(private readonly sportService: SportService) {}
 

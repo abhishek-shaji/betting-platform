@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import { client } from '../fetcher';
 
 export default async function Index() {
-  const { data } = await client.GET('/api/sport', {
+  const { data } = await client.GET('/api/sports', {
     cache: 'force-cache',
   });
 

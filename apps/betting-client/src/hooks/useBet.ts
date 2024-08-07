@@ -15,7 +15,7 @@ export const useBet = () => {
     setLoading(true);
     setError(null);
 
-    const { data, error } = await client.POST('/api/bet/{outcomeId}', {
+    const { error } = await client.POST('/api/bets/{outcomeId}', {
       params: {
         path: {
           outcomeId,
