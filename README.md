@@ -1,6 +1,6 @@
 # Online Betting Dashboard
 
-This project is a simple online betting dashboard that displays a list of sports events, their corresponding odds, and allows users to place bets. It's built using Next.js for the frontend and Nest.js for the backend, organized in a NX monorepo.
+This project is a simple online betting dashboard that displays a list of sporting events, their corresponding odds, and allows users to place bets. It's built using Next.js frontend and Nest.js backend, organized in a NX monorepo.
 
 ## Future Improvements
 Improvements that can be made to the project with more time:
@@ -12,9 +12,9 @@ Improvements that can be made to the project with more time:
 
 ## Prerequisites
 
-- Node.js (version 14 or later recommended)
-- npm or yarn
-- PostgreSQL
+- Node.js (version 18 or later recommended)
+- `npm` package manager
+- PostgreSQL database
 
 ## Project Structure
 
@@ -41,7 +41,7 @@ npm ci
    - Create a `.env.local` file in the root of `apps/betting-client` and add the following environment variables:
      ```bash
      BACKEND_API_BASE_URL=http://localhost:4200
-     NEXT_PUBLIC_HOST=http://localhost:3000
+     NEXT_PUBLIC_CLIENT_BASE_URL=http://localhost:3000
       ```
 ### Seed the database:
 ```bash
