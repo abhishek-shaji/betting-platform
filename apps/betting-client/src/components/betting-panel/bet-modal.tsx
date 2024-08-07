@@ -5,14 +5,11 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import { useBet } from '../../hooks/useBet';
+import { Outcome } from '../../types';
 
 export interface BetData {
   eventName: string;
-  outcome: {
-    id: number;
-    name: string;
-    odds: number;
-  };
+  outcome: Outcome;
 }
 
 interface BetModalProps {

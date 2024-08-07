@@ -10,8 +10,6 @@ export const metadata = {
   description: 'The best place to bet on your favorite sports',
 };
 
-export const fetchCache = 'force-no-store';
-
 export default function RootLayout({
   children,
 }: {
