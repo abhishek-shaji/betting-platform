@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Outcome } from '../entities/outcome.entity';
 import { Event } from '../entities/event.entity';
+import { Outcome } from '../entities/outcome.entity';
 
 @Injectable()
 export class EventService {

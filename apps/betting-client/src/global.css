@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn {
+  @apply block whitespace-nowrap rounded-lg px-5 py-2 text-sm font-semibold md:px-8;
+}
+
+.btn-primary {
+  @apply bg-primary text-white duration-300 hover:brightness-75;
+}
+
+.btn-secondary {
+  @apply bg-primary text-white duration-300 hover:brightness-75;
+}

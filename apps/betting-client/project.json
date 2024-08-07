@@ -5,5 +5,13 @@
   "projectType": "application",
   "tags": [],
   "// targets": "to see all targets run: nx show project betting-client --web",
-  "targets": {}
+  "targets": {
+    "openapi-typescript": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx openapi-typescript http://localhost:3000/swagger.json --output src/types/schema.ts",
+        "cwd": "apps/betting-client"
+      }
+    }
+  }
 }

@@ -2,15 +2,16 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { User } from './entities/user.entity';
-import { Outcome } from './entities/outcome.entity';
-import { Event } from './entities/event.entity';
 import { Bet } from './entities/bet.entity';
-import { UsersModule } from './modules/user.module';
-import { EventsModule } from './modules/events.module';
-import { BetModule } from './modules/bet.module';
+import { Event } from './entities/event.entity';
+import { Outcome } from './entities/outcome.entity';
 import { Sport } from './entities/sport.entity';
+import { User } from './entities/user.entity';
 import { migrations } from './migrations';
+import { BetModule } from './modules/bet.module';
+import { EventsModule } from './modules/events.module';
+import { SportsModule } from './modules/sports.module';
+import { UsersModule } from './modules/user.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { migrations } from './migrations';
     UsersModule,
     EventsModule,
     BetModule,
+    SportsModule,
   ],
   controllers: [],
   providers: [],

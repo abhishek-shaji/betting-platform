@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { Bet } from '../entities/bet.entity';
 import { Event } from '../entities/event.entity';
 import { Outcome } from '../entities/outcome.entity';
-import { SeederService } from '../services/seeder.service';
-import { User } from '../entities/user.entity';
-import { Bet } from '../entities/bet.entity';
 import { Sport } from '../entities/sport.entity';
+import { User } from '../entities/user.entity';
 import { migrations } from '../migrations';
+import { SeederService } from '../services/seeder.service';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { migrations } from '../migrations';
       synchronize: false,
       migrationsRun: true,
     }),
-    TypeOrmModule.forFeature([Event, Outcome, User, Sport]),
+    TypeOrmModule.forFeature([Event, Outcome, User, Bet, Sport]),
   ],
   exports: [TypeOrmModule],
   controllers: [],
