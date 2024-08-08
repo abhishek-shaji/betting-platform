@@ -4,6 +4,7 @@ import React from 'react';
 
 import { Event } from '../../types';
 import { BetData, BetModal } from './bet-modal';
+import { format } from 'date-fns';
 
 interface EventsListProps {
   events: Event[];
@@ -31,7 +32,7 @@ const EventsList = ({ events }: EventsListProps) => {
                 {name}
               </p>
               <p className="text-gray-500 text-sm">
-                {new Date(startTime).toLocaleString()}
+                {format(new Date(startTime), "MMMM d, yyyy 'at' h:mm a")}
               </p>
             </div>
             {outcomes.map(({ id, name }) => (
